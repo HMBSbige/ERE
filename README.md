@@ -19,7 +19,7 @@ examples:
 >
 > -a [ --alphabet ] arg set regular expression alphabet
 
-ERE.exe -e "a(b|cd)* e" -s abbbcdcde
+ERE.exe -e "a(b|cd)*e" -s abbbcdcde
 
 ![](doc/1.png)
 
