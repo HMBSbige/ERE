@@ -19,7 +19,7 @@ examples:
 >
 > -a [ --alphabet ] arg set regular expression alphabet
 
-ERE.exe -e "a(b|cd)*e" -s abbbcdcde
+ERE.exe -e "a(b|cd)* e" -s abbbcdcde
 
 ![](doc/1.png)
 
@@ -32,3 +32,18 @@ dot -T png -O NFA.dot DFA.dot min_DFA.dot
 ![](doc/DFA.dot.png)
 
 ![](doc/min_DFA.dot.png)
+
+## Build boost with msvc 14.1
+
+* Run: ```bootstrap.bat```
+
+* open ```project-config.jam```. Edit:
+
+```
+import option ;
+
+using msvc : 14.0 : "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\bin\HostX64\x64\cl.exe";
+
+option.set keep-going : false ;
+```
+* Run ```b2 toolset=msvc-14.0 address-model=64```
